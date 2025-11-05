@@ -1,0 +1,17 @@
+{
+  "name": "ragnaroks-hearth-mobile",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "expo start",
+    "android": "expo start --android",
+    "ios": "expo start --ios",
+    "test": "echo \"No mobile tests configured\" && exit 0"
+  },
+  "dependencies": {
+    "expo": "~48.0.0",
+    "react": "18.2.0",
+    "react-native": "0.71.8",
+    "axios": "^1.4.0"
+  }
+}

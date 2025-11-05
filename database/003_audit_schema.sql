@@ -1,0 +1,7 @@
+CREATE TABLE IF NOT EXISTS audit_log (
+  id SERIAL PRIMARY KEY,
+  user_id INTEGER REFERENCES users(id),
+  action TEXT,
+  meta JSONB,
+  at TIMESTAMP DEFAULT NOW()
+);

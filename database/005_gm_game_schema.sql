@@ -1,0 +1,26 @@
+CREATE TABLE IF NOT EXISTS quests (
+  id SERIAL PRIMARY KEY,
+  server_id INTEGER REFERENCES servers(id) ON DELETE CASCADE,
+  title TEXT,
+  status TEXT DEFAULT 'pending'
+);
+
+CREATE TABLE IF NOT EXISTS initiatives (
+  id SERIAL PRIMARY KEY,
+  server_id INTEGER REFERENCES servers(id) ON DELETE CASCADE,
+  char_id INTEGER,
+  idx INTEGER
+);
+
+CREATE TABLE IF NOT EXISTS timers (
+  id SERIAL PRIMARY KEY,
+  label TEXT,
+  duration INTEGER,
+  started_at TIMESTAMP DEFAULT NOW(),
+  active BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS gm_notes (
+  server_id INTEGER PRIMARY KEY REFERENCES servers(id),
+  notes TEXT
+);

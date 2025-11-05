@@ -1,0 +1,12 @@
+:root{
+  --bg:#0f1724;
+  --panel:#0b1220;
+  --accent:#c084fc;
+  --text:#e6eef8;
+}
+body{ margin:0; font-family:Inter,system-ui,Arial; background:var(--bg); color:var(--text); }
+.app-shell{ display:grid; grid-template-columns:220px 1fr 320px; min-height:100vh; gap:12px; padding:12px; }
+.app-header{ grid-column:1/-1; font-size:20px; margin-bottom:6px; }
+.left-col, .right-col{ background:var(--panel); padding:12px; border-radius:8px; }
+.main-col{ background:linear-gradient(180deg,#071022, #081226); padding:12px; border-radius:8px; }
+.server-switcher select{ width:100%; padding:6px; border-radius:4px; }

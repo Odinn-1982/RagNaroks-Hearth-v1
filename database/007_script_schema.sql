@@ -1,0 +1,13 @@
+CREATE TABLE IF NOT EXISTS scripts (
+  id SERIAL PRIMARY KEY,
+  plugin_id INTEGER REFERENCES plugins(id) ON DELETE CASCADE,
+  code TEXT,
+  enabled BOOLEAN DEFAULT TRUE
+);
+
+CREATE TABLE IF NOT EXISTS script_logs (
+  id SERIAL PRIMARY KEY,
+  script_id INTEGER REFERENCES scripts(id) ON DELETE CASCADE,
+  text TEXT,
+  created_at TIMESTAMP DEFAULT NOW()
+);
